@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>เข้าสู่ระบบ | เที่ยวบ้านเรา</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+    .login-form label {
+      font-weight: 600;
+    }
+    .login-form input {
+      padding: 0.6rem 0.75rem;
+      border: 1px solid #b8c9be;
+      border-radius: 0.35rem;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    .login-form input:focus {
+      outline: 2px solid #174c3c;
+      border-color: #174c3c;
+    }
+    .login-message {
+      margin-top: 1rem;
+      padding: 0.75rem 1rem;
+      border-radius: 0.35rem;
+      display: none;
+      font-weight: 500;
+    }
+    .login-message.success {
+      display: block;
+      background: #e6f4ea;
+      color: #137333;
+      border: 1px solid #b7e1cd;
+    }
+    .login-message.error {
+      display: block;
+      background: #fce8e6;
+      color: #c5221f;
+      border: 1px solid #fad2cf;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="site-name">เที่ยวบ้านเรา</p>
+    <nav aria-label="เมนูหลัก">
+      <ul>
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="places.html">ที่เที่ยว</a></li>
+        <li><a href="food.html">อาหาร</a></li>
+        <li><a href="plan.html">วางแผนเที่ยว</a></li>
+        <li><a href="travel.html">ข้อมูลการเดินทาง</a></li>
+        <li><a href="login.html" aria-current="page">เข้าสู่ระบบ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>เข้าสู่ระบบ</h1>
+    <p>สำหรับผู้ดูแลข้อมูลหรือสมาชิกเว็บไซต์ เที่ยวบ้านเรา</p>
+
+    <section class="card">
+      <h2>ลงชื่อเข้าใช้งาน</h2>
+      <form id="loginForm" class="login-form">
+        <div>
+          <label for="username">ชื่อผู้ใช้หรืออีเมล</label><br>
+          <input type="text" id="username" name="username" placeholder="เช่น admin@travel.local" style="width: 100%; margin-top: 0.25rem;">
+        </div>
+
+        <div>
+          <label for="password">รหัสผ่าน</label><br>
+          <input type="password" id="password" name="password" placeholder="กรอกรหัสผ่าน" style="width: 100%; margin-top: 0.25rem;">
+        </div>
+
+        <div>
+          <button type="submit" class="button" style="border: none; cursor: pointer; font-size: 1rem;">เข้าสู่ระบบ</button>
+          <a class="button" href="index.html" style="background: #5f6f68; margin-left: 0.5rem;">กลับหน้าแรก</a>
+        </div>
+      </form>
+
+      <div id="loginMsg" class="login-message" role="alert"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>นางสาวชุติกาญจน์ หวังเจริญ 044 | เที่ยวบ้านเรา · ใบงานฝึกปฏิบัติวิชาการสร้างเว็บไซต์ทางธุรกิจ</p>
+  </footer>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const user = document.getElementById('username').value.trim();
+      const pass = document.getElementById('password').value.trim();
+      const msg = document.getElementById('loginMsg');
+
+      if (!user || !pass) {
+        msg.className = 'login-message error';
+        msg.textContent = 'กรุณากรอกชื่อผู้ใช้และรหัสผ่านให้ครบถ้วน';
+        return;
+      }
+
+      if (pass.length < 4) {
+        msg.className = 'login-message error';
+        msg.textContent = 'รหัสผ่านต้องมีอย่างน้อย 4 ตัวอักษร';
+        return;
+      }
+
+      msg.className = 'login-message success';
+      msg.textContent = 'เข้าสู่ระบบสำเร็จ! ยินดีต้อนรับคุณ ' + user;
+    });
+  </script>
+</body>
+</html>

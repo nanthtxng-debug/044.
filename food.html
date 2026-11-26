@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>อาหารและของฝาก | เที่ยวบ้านเรา</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .food-img {
+      width: 100%;
+      max-height: 260px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      margin: 0.75rem 0;
+      border: 1px solid #d1e2d7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="site-name">เที่ยวบ้านเรา</p>
+    <nav aria-label="เมนูหลัก">
+      <ul>
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="places.html">ที่เที่ยว</a></li>
+        <li><a href="food.html" aria-current="page">อาหาร</a></li>
+        <li><a href="plan.html">วางแผนเที่ยว</a></li>
+        <li><a href="travel.html">ข้อมูลการเดินทาง</a></li>
+        <li><a href="login.html">เข้าสู่ระบบ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>อาหารและของฝาก</h1>
+    <p>ชิมเมนูอร่อยประจำถิ่นและเลือกซื้อของฝากจากชุมชน</p>
+
+    <section class="card">
+      <h2>อาหารพื้นถิ่น</h2>
+      <img class="food-img" src="images/อาหารพื้นถิ่น.jpg" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/pic2.png';}" alt="อาหารพื้นถิ่น">
+      <p>แนะนำเมนูเด่นของชุมชน พร้อมบอกว่าหาซื้อได้ที่ไหน ปรุงสดใหม่ด้วยวัตถุดิบท้องถิ่นและสูตรดั้งเดิมของคนในพื้นที่</p>
+      <ul>
+        <li>สำรับอาหารพื้นบ้านประจำถิ่น — หาซื้อได้ที่ตลาดชุมชนและร้านอาหารท้องถิ่น</li>
+        <li>ขนมหวานและเครื่องดื่มสมุนไพร — เหมาะสำหรับเติมพลังระหว่างเดินเที่ยว</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>เมนูแนะนำและจุดแวะชิม</h2>
+      <img class="food-img" src="images/เมนูแนะนำและจุดแวะชิม.jpg" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/pic1.png';}" alt="เมนูแนะนำและจุดแวะชิม">
+      <p>รวมจานเด็ดและของว่างยอดนิยมที่นักท่องเที่ยวนิยมแวะชิมเมื่อมาเยือนชุมชน</p>
+    </section>
+
+    <section class="card">
+      <h2>ของฝากจากชุมชน</h2>
+      <img class="food-img" src="images/ของฝากจากชุมชน.jpg" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/market1.png';}" alt="ของฝากจากชุมชน">
+      <p>แนะนำผลิตภัณฑ์ท้องถิ่นและจุดจำหน่ายที่ผู้เดินทางแวะได้ ช่วยสนับสนุนรายได้ให้แก่กลุ่มอาชีพในชุมชน</p>
+      <ul>
+        <li>ผลไม้ตามฤดูกาลและสินค้าแปรรูป — จำหน่ายที่จุดจำหน่ายของฝากชุมชน</li>
+        <li>งานหัตถกรรมและเครื่องจักสาน — ผลิตโดยกลุ่มแม่บ้านและช่างฝีมือในท้องถิ่น</li>
+      </ul>
+    </section>
+
+    <a class="button" href="plan.html">ไปหน้าวางแผนเที่ยว</a>
+  </main>
+
+  <footer>
+    <p>นางสาวชุติกาญจน์ หวังเจริญ 044 | เที่ยวบ้านเรา · ใบงานฝึกปฏิบัติวิชาการสร้างเว็บไซต์ทางธุรกิจ</p>
+  </footer>
+</body>
+</html>
